@@ -3,7 +3,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 const config: CapacitorConfig = {
   appId: 'mejora.cit',
   appName: 'mejora-cit',
-  webDir: 'www',
+  webDir: 'src',
   server: {
     androidScheme: 'https'
   }
