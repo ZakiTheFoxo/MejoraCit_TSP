@@ -1,0 +1,7 @@
+{
+  "name": "mejora-cit",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}
