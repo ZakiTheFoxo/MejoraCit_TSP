@@ -1,0 +1,24 @@
+<div *ngIf="reporte">
+  <p class="veces">Veces Reportado: {{ reporte.veces_reportado }}</p>
+  <p class="desc">{{ reporte.description }}</p>
+  <div class="st" *ngIf="reporte.status == 'Registrado'; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+      <p class="status" style="background: #C20303"> {{ reporte.status }} </p>
+    </ng-template>
+    <ng-template #elseBlock>
+      <p class="status" style="background: #2BD639"> {{ reporte.status }} </p>
+    </ng-template>
+    <h2>Fotos</h2>
+    <div *ngIf="reporte.imagen" class="img_container">
+      <img src="../../assets/{{reporte.imagen}}">
+    </div>
+    <hr>
+    <h2>Localización</h2>
+    <div class="img_container">
+      <img src="../../assets/mapa.png">  <!-- {{reporte.localizacion} -->
+    </div>
+    <hr>
+    <div class="btn_container">
+      <button class="btn">Ya está arreglado? (Toca aquí)</button>
+    </div>
+</div>

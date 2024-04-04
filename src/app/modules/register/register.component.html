@@ -1,0 +1,45 @@
+<div class="login">
+  <form class="custom-form" [formGroup]="registerUserForm" (ngSubmit)="addUser()">
+    <input
+      type="text"
+      formControlName="nombre"
+      placeholder="Nombre de Usuario"
+    />
+    <input
+      type="email"
+      formControlName="email"
+      placeholder="Correo Electrónico"
+    />
+    <input
+      type="number"
+      formControlName="telefono"
+      placeholder="Número telefónico (Opcional)"
+    />
+    <input
+      type="password"
+      formControlName="password"
+      placeholder="Contraseña"
+    />
+    <input
+      type="password"
+      formControlName="password2"
+      placeholder="Confirmar Contraseña"
+    />
+    <div class="check">
+      <label>
+        <input
+          type="checkbox"
+          formControlName="check"
+          required = "required"
+        />
+        Acepto los <a>Términos y Condiciones</a>
+      </label>
+    </div>
+    <div class="error" *ngIf="error">
+      Debe llenar todos los campos obligatorios
+    </div>
+    <div class="buttons">
+      <button type="submit">Registrarse</button>
+    </div>
+  </form>
+</div>

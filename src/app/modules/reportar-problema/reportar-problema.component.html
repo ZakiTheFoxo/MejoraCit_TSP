@@ -1,0 +1,49 @@
+<p class="title">Verifica primero si no se ha reportado antes</p>
+<hr/>
+<div class="reportes" *ngFor="let reporte of reportes">
+  <a
+  [title]="reporte.name + ' description'"
+  [routerLink]="['/reportes', reporte.id]">
+
+  <div class="container">
+      <div class="data">
+        <h2>
+          {{ reporte.name }}
+        </h2>
+
+        <p class="description">
+          {{ reporte.description }}
+        </p>
+
+        <div *ngIf="reporte.status == 'Registrado'; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+          <p class="status" style="background: #C20303"> {{ reporte.status }} </p>
+        </ng-template>
+        <ng-template #elseBlock>
+          <p class="status" style="background: #2BD639"> {{ reporte.status }} </p>
+        </ng-template>
+
+        <p class="veces_reportado">
+          Veces reportado: {{ reporte.veces_reportado }}
+        </p>
+      </div>
+
+      <div class="mapa">
+        <img src="assets/mapa.png" alt="">
+      </div>
+
+    </div>
+    </a>
+  <hr>
+</div>
+
+<div style="height: 60px;"></div>
+
+<button [routerLink]="['/reportnew']">
+      No se encuentra en la lista
+</button>
+<!--
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
